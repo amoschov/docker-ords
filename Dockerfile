@@ -16,8 +16,7 @@ WORKDIR ${ORDS_DIR}
 
 COPY ["ords.war", "scripts/*", "/tmp/"]
 
-RUN chmod +x /tmp/docker-run.sh && \
-  /tmp/docker-run.sh
+RUN chmod +x /tmp/docker-run.sh && sync; /tmp/docker-run.sh
 
 ENTRYPOINT ["/ords/config-run-ords.sh"]
 
